@@ -24,7 +24,7 @@ class TipSelector extends Component {
           values={this.state.values}
           selectedIndex={this.state.selectedIndex}
           onChange={(event) => {
-            let _selectedIndex = event.nativeEvent.selectedSegmentIndex
+            let _selectedIndex = event.nativeEvent.selectedSegmentIndex;
             this.setState({selectedIndex: _selectedIndex});
             this.props.selectionChanged(this.state.percentages[_selectedIndex])
           }}
