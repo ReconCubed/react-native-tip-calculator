@@ -41,7 +41,9 @@ export default class TipCalc extends Component<Props> {
   render() {
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding">
+        
         <View style={styles.row}>
+
           <Text style={styles.label}>
             Amount Total:
           </Text>
@@ -50,6 +52,7 @@ export default class TipCalc extends Component<Props> {
             style={styles.textInput}
             onChangeText={this.calculateTip.bind(this)}>
           </TextInput>
+
         </View>
 
         <TipSelector
@@ -70,12 +73,16 @@ export default class TipCalc extends Component<Props> {
             style={styles.slider}
           />
         </View>
+
         <View style={styles.row}>
           <Text style={styles.label}>Amount Per Person:</Text>
+
           <Text style={styles.amount}>
             ${this.state.amountPerPerson}
           </Text>
+
         </View>
+
         <View style={styles.row}>
 
           <Text style={styles.label}>
@@ -85,7 +92,9 @@ export default class TipCalc extends Component<Props> {
           <Text style={styles.amount}>
             ${this.state.tipTotal.toFixed(2)}
           </Text>
+
         </View>
+
       </KeyboardAvoidingView>
     );
   }
