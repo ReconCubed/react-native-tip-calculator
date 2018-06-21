@@ -41,7 +41,7 @@ export default class TipCalc extends Component<Props> {
     return (
       <View style={styles.container}>
         <View style={styles.row}>
-          <Text>
+          <Text style={styles.label}>
             Amount Total:
           </Text>
 
@@ -52,7 +52,7 @@ export default class TipCalc extends Component<Props> {
         </View>
         <View style={styles.row}>
 
-          <Text>Split Amongst: {this.state.split}</Text>
+          <Text style={styles.label}>Split Amongst: {this.state.split}</Text>
 
           <Slider
             maximumValue={20}
@@ -64,14 +64,14 @@ export default class TipCalc extends Component<Props> {
           />
         </View>
         <View style={styles.row}>
-          <Text>Amount Per Person:</Text>
+          <Text style={styles.label}>Amount Per Person:</Text>
           <Text style={styles.amount}>
             ${this.state.amountPerPerson}
           </Text>
         </View>
         <View style={styles.row}>
 
-          <Text>
+          <Text style={styles.label}>
             Total Tip:
           </Text>
 
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     color: '#333333',
     margin: 5,
     height: 50,
-    width: 200,
+    flex: 2,
     borderColor: '#60b7e2',
     fontSize: 30,
     borderWidth: 1
@@ -114,6 +114,12 @@ const styles = StyleSheet.create({
   slider: {
     margin: 5,
     height: 40,
-    width: 170,
-  }
+    flex: 2,
+  },
+  label: {
+    textAlign: 'left',
+    margin: 10,
+    flex: 1,
+    color: '#60b7e2',
+  },
 });
