@@ -16,6 +16,18 @@ import {
 
 type Props = {};
 export default class TipCalc extends Component<Props> {
+  state = {
+    amountTotal: 0,
+    tipPercentage: 0.15,
+    tipTotal: 0,
+  };
+
+  calculateTip(value) {
+    this.state.amountTotal = value;
+    this.state.tipTotal = value * this.state.tipPercentage;
+    this.setState(this.state);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -23,8 +35,9 @@ export default class TipCalc extends Component<Props> {
           Amount Total:
         </Text>
 
-        <TextInput style={styles.textInput}>
-
+        <TextInput
+          style={styles.textInput}
+          onChangeText={this.calculateTip.bind(this)}>
         </TextInput>
 
         <Text>
@@ -32,7 +45,7 @@ export default class TipCalc extends Component<Props> {
         </Text>
 
         <Text style={styles.amount}>
-          $10
+          ${this.state.tipTotal.toFixed(2)}
         </Text>
       </View>
     );
@@ -51,8 +64,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     margin: 5,
     height: 50,
-    width: 100,
+    width: 300,
     borderColor: '#60b7e2',
+    fontSize: 30,
     borderWidth: 1
   },
   amount: {
