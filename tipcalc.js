@@ -6,7 +6,7 @@ import {
   View,
   TextInput,
 } from 'react-native';
-
+import TipSelector from './tip-selector';
 
 type Props = {};
 export default class TipCalc extends Component<Props> {
@@ -31,6 +31,12 @@ export default class TipCalc extends Component<Props> {
     this.setState(this.state);
   }
 
+  updateTipPercentage(value) {
+    this.state.tipPercentage = value;
+    this.setState(this.state);
+    this.calculateTip(this.state.amountTotal);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -44,6 +50,12 @@ export default class TipCalc extends Component<Props> {
             onChangeText={this.calculateTip.bind(this)}>
           </TextInput>
         </View>
+
+        <TipSelector
+          style={styles.row}
+          selectionChanged={this.updateTipPercentage.bind(this)}
+        />
+
         <View style={styles.row}>
 
           <Text style={styles.label}>Split Amongst: {this.state.split}</Text>
