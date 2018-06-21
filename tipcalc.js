@@ -5,6 +5,7 @@ import {
   Text,
   View,
   TextInput,
+  KeyboardAvoidingView,
 } from 'react-native';
 import TipSelector from './tip-selector';
 
@@ -39,7 +40,7 @@ export default class TipCalc extends Component<Props> {
 
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
         <View style={styles.row}>
           <Text style={styles.label}>
             Amount Total:
@@ -85,7 +86,7 @@ export default class TipCalc extends Component<Props> {
             ${this.state.tipTotal.toFixed(2)}
           </Text>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
