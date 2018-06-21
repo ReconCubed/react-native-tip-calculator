@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {
   StyleSheet,
-  Text,
   View,
   SegmentedControlIOS,
 } from 'react-native';
@@ -14,7 +13,7 @@ class TipSelector extends Component {
     percentages: [0.15, 0.18, 0.20, 0.25],
   };
 
-  static PropTypes = {
+  static propTypes = {
     selectionChanged: PropTypes.func.isRequired,
   };
 
