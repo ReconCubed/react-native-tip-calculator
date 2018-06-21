@@ -8,9 +8,9 @@ import {
 
 class TipSelector extends Component {
   state = {
-    selectedIndex: 0,
-    values: ['Ok 15%', 'Good 18%', 'Great 20%', 'WOW! 25%'],
-    percentages: [0.15, 0.18, 0.20, 0.25],
+    selectedIndex: 1,
+    values: ['No Tip','Ok 15%', 'Good 18%', 'Great 20%', 'WOW! 25%'],
+    percentages: [0, 0.15, 0.18, 0.20, 0.25],
   };
 
   static propTypes = {

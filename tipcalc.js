@@ -41,7 +41,7 @@ export default class TipCalc extends Component<Props> {
   render() {
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding">
-        
+
         <View style={styles.row}>
 
           <Text style={styles.label}>
