@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import TipCalc from './App';
+import TipCalc from './tipcalc';
 
 AppRegistry.registerComponent('tipcalc', () => TipCalc);
